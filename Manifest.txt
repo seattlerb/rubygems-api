@@ -1,0 +1,7 @@
+History.rdoc
+Manifest.txt
+README.rdoc
+Rakefile
+lib/rubygems/commands/api_command.rb
+lib/rubygems_plugin.rb
+test/rubygems/test_api.rb
