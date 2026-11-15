@@ -37,34 +37,36 @@ class Gem::Commands::ApiCommand < Gem::Command
 
       Here's the current full API:
 
-         GET    /api/v1/activity/latest
          GET    /api/v1/activity/just_updated
-         GET    /api/v1/api_key.(json|yaml)
-         GET    /api/v1/dependencies?gems=$GEM1,$GEM2,...
+         GET    /api/v1/activity/latest
+         PATCH  /api/v1/api_key
+         POST   /api/v1/api_key.(json|yaml)
+         GET    /api/v1/attestations/$NAME-$VERSION.json
          GET    /api/v1/downloads.(json|yaml)
          GET    /api/v1/downloads/$NAME-$VERSION.(json|yaml)
+         GET    /api/v1/downloads/all.(json|yaml)
          POST   /api/v1/gems
          GET    /api/v1/gems.(json|yaml)
          GET    /api/v1/gems/$NAME.(json|yaml)
-         GET    /api/v1/gems/$NAME/reverse_dependencies.json
          GET    /api/v1/gems/$NAME/owners.(json|yaml)
          POST   /api/v1/gems/$NAME/owners
          DELETE /api/v1/gems/$NAME/owners
          PATCH  /api/v1/gems/$NAME/owners
+         GET    /api/v1/gems/$NAME/reverse_dependencies.json
          DELETE /api/v1/gems/yank
          POST   /api/v1/oidc/trusted_publisher/exchange_token
          GET    /api/v1/owners/$username_or_id/gems.(json|yaml)
          GET    /api/v1/profile/me.(json|yaml)
          GET    /api/v1/profiles/$username_or_id.(json|yaml)
          GET    /api/v1/search.(json|yaml)?query=$query[&page=$N]
+         GET    /api/v1/search/autocomplete?query=$query
          GET    /api/v1/timeframe_versions.json
          GET    /api/v1/versions/$NAME.(json|yaml)
          GET    /api/v1/versions/$NAME/latest.json
-         GET    /api/v1/web_hooks.(json|yaml)
          POST   /api/v1/web_hooks
-         DELETE /api/v1/web_hooks/remove
+         GET    /api/v1/web_hooks.(json|yaml)
          POST   /api/v1/web_hooks/fire
-         GET    /api/v2/rubygems/$NAME/versions/$VERSION.(json|yaml)
+         DELETE /api/v1/web_hooks/remove
 
       Currently, only the GET endpoints are currently supported, but
       most of the others are supported through other gem commands (eg
