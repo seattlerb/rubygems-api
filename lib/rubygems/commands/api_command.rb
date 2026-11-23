@@ -77,6 +77,7 @@ class Gem::Commands::ApiCommand < Gem::Command
   def read_url url
     URI.parse(url)
       .read("User-Agent"    => "rubygems-api/#{VERSION}",
+            # TODO: "OTP" => otp,
             "Authorization" => creds)
   end
 
